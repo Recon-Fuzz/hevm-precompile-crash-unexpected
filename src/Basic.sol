@@ -8,9 +8,9 @@ interface IERC20 {
 contract Basic {
 
     // We expect this to cause a crash as we're rawdogging the precompile
-    function doACall() public {
-        address(0x0a).call("");
-    }
+    // function doACall() public {
+    //     address(0x0a).call("");
+    // }
 
     // We don't expect this to cause a crash because the compiler should prevent us from calling it
     // but it crashes HEVM
@@ -20,8 +20,8 @@ contract Basic {
     }
 
     // Safe, we can actually get the code size
-    function doACall() public {
-        uint256 size = address(0x0a).code.length;
-        size + 1;
-    }
+    // function doACall() public {
+    //     uint256 size = address(0x0a).code.length;
+    //     size + 1;
+    // }
 }
